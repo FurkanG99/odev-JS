@@ -1,12 +1,13 @@
 let randomNumber = Math.ceil(Math.random() * 10) ; 
+console.log(randomNumber);
 let attemps = 3;
 let playerScore=0;
+let scoreForCorrectAnswer = 10;
 let remainingAttemps = attemps;
 
 //! HTML İLE BİRLEŞTİRME;
 
 let msgElement = document.getElementById('message');
-let guessInputElement = document.getElementById('guessInput');
 let remainingAttemptsElement = document.getElementById('remainingAttempts');
 let playerScoreElement = document.getElementById('playerScore');
 
@@ -14,31 +15,32 @@ msgElement.textContent = 'Bir Sayı Tahmin Et: '
 
 //!Tahmin Fonksiyonu oluştur!
 
-function controlGuess (guessInputElement){
-  parseInt(guessInputElement);
-  return;
-}
-
-if(guessInputElement == randomNumber){
-  msgElement.textContent = 'Tebrikler! Doğru Bildiniz.'
-  playerScore += remainingAttemps * 10;
+function controlGuess (){
+  if(randomNumber == parseInt(document.getElementById('guessInputElement').value)  )
+{
+  // eşleşiyorsa
+  alert("DOĞRU");
+  playerScore+= scoreForCorrectAnswer;
   playerScoreElement.textContent = playerScore;
-  resetGame();
-}else{
-  remainingAttemps --;
-  msgElement.textContent = 'Yanlış Bildiniz 2 hakkınız kaldı'
 }
-if (remainingAttemps === 0){
-  msgElement.textContent =  'Oyun bitti. Doğru sayı ' + secretNumber ;
+else{
+  alert("YANLIŞ");
+  playerScore-= scoreForCorrectAnswer;
+  remainingAttemps -=1;
+  playerScoreElement.textContent = playerScore;
 
-  resetGame();
-}else {
-  remainingAttemps --;
-  msgElement.textContent = 'Hakkınız Bitti. Tekrar dene '
 }
+}
+
+
 
 //! OYUNU SIFIRLAMA FONKSİYONU EKLE 
-
+function Resetle(){
+  attemps = 3;
+  remainingAttemps= 3;
+  playerScore=0;
+  msgElement.textContent  = 'Tekrar Başla'
+}
 function resetGame(){
   secretNumber = Math.ceil(Math.random() * 10);
   remainingAttemps = attemps;
