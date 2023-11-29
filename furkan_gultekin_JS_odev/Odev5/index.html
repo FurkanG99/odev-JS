@@ -9,12 +9,12 @@
 <body>
     <h1>Sayı Bulmaca Oyunu</h1>
     <p id="message">Bir sayı tahmin et: </p>
-    <input type="number" id="guessInputElement">
-    <button onclick="controlGuess()">Tahmin Et</button>
+    <input type="number" id="guessInputElement" class="guessInput">
+    <button class="btn" onclick="controlGuess()">Tahmin Et</button>
   
     <p id="attempts">Kalan Hak: <span id="remainingAttempts"></span></p>
     <p id="score">Puan: <span id="playerScore"></span></p>
-    <button class="btn btn-primary" onclick="Resetle()">Resetle</button>
+    <button class="btn" onclick="Resetle()">Resetle</button>
 
     <script src="app.js"></script>
 </body>

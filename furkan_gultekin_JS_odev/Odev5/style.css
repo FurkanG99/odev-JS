@@ -2,3 +2,11 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
   }
+
+  .btn{
+    border: 1px solid green;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+  }
