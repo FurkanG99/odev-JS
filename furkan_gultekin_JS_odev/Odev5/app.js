@@ -38,12 +38,14 @@ function controlGuess() {
     remainingAttemptsElement.textContent = remainingAttemps;
   }
 }
-
+if (attemps == 0){
+  Resetle();
+}
 
 // //! OYUNU SIFIRLAMA FONKSİYONU EKLE 
-// function Resetle(){
-//   attemps = 3;
-//   remainingAttemps= 3;
-//   playerScore=0;
-//   msgElement.textContent  = 'Yeniden Denemek İster misin :) ?'
-// }
+function Resetle(){
+  attemps = 3;
+  remainingAttemps= 3;
+  playerScore=0;
+  msgElement.textContent  = 'Yeniden Denemek İster misin :) ?'
+}
