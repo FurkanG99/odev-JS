@@ -1,8 +1,6 @@
 let year = prompt("Lütfen Bir Yıl giriniz: ")
-let exYear;
-if (year % 400 == 0) {
-    alert("Bu Yıl Artık bir yıl değildir.")
+if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+  alert("Bu yıl artık yıldır.")
 } else {
- let exYear = (year / 400 !=0);
-   alert("Bu yıl artık yıldır.")
+   alert("Bu Yıl Artık bir yıl değildir.")
 }
