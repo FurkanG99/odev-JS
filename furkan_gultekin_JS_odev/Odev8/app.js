@@ -17,4 +17,8 @@ console.log("Ders Adı Eğitimi Kelimesini İçeriyor mu? : " + include);
 //* boşluklara "-" ekle
 //* iki değişkenin arasına / ekle
 let createString = url + "/" + dersAdi.toLowerCase().replace(/\s/g, "-");
+createString = createString.replace("ğ","g");
+createString = createString.replace("&quot","");
 console.log("Oluşturulan String: " + createString)
+
+
