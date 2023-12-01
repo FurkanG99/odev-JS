@@ -18,34 +18,41 @@ msgElement.textContent = 'Bir Sayı Tahmin Et: '
 
 function controlGuess() {
   let userGuess = parseInt(document.getElementById('guessInputElement').value);
+  if(remainingAttemps==0){
+    alert('hakkınız bitti ciceğim');
+    return;
+  }
 
   if (userGuess === randomNumber) {
     // eşleşiyorsa
     alert("Tebrikler! Doğru Bildin");
     playerScore += scoreForCorrectAnswer;
     playerScoreElement.textContent = playerScore;
-    Resetle();
   } else {
     if (userGuess < randomNumber) {
       msgElement.textContent = 'Daha büyük bir sayı olacak';
     } else {
       msgElement.textContent = 'Daha Küçük bir sayı olacak';
     }
+    
     alert("HAHAHAHAH Bilemedin mi :)) belki bu sefer bilirsin.");
     playerScore -= scoreForCorrectAnswer;
     remainingAttemps -= 1;
     playerScoreElement.textContent = playerScore;
     remainingAttemptsElement.textContent = remainingAttemps;
+    
   }
+  
 }
 if (attemps == 0){
-  Resetle();
+ 
 }
 
 // //! OYUNU SIFIRLAMA FONKSİYONU EKLE 
 function Resetle(){
-  attemps = 3;
-  remainingAttemps= 3;
-  playerScore=0;
-  msgElement.textContent  = 'Yeniden Denemek İster misin :) ?'
-}
+  remainingAttemps=10;
+  playerScore=100;
+  playerScoreElement.textContent=100;
+  remainingAttemptsElement.textContent=10;
+
+  msgElement.textContent  = 'Yeniden Denemek İster misin :) ?' }
