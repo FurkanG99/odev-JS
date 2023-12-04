@@ -1,7 +1,3 @@
-// let decreaseValue = document.getElementById= 'decrease';
-// let increaseValue = document.getElementById= 'increase';
-// let value = document.getElementById = 'value';
-
 let value = 0
 
 function decreaseVal(){
